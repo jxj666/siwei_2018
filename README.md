@@ -1,15 +1,19 @@
 # 前端基础知识
 
-[html5](h5.md)
+##自己总结的前端最基础知识
 
-[javascript](js.md)
+### [html5](h5.md)
 
-[dom](dom.md)
+## [javascript](js.md)
 
-[bom](bom.md)
+## [dom](dom.md)
 
-[ajax](ajax.md)
+### [bom](bom.md)
 
-[jQuery](jq.md)
+### [ajax](ajax.md)
+
+## [jQuery](jq.md)
 
 ## 小健
+### 有错误请提醒我:webjxj@foxmail.com 
+## 谢谢
