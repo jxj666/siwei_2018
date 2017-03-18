@@ -1,25 +1,21 @@
 # DOM
 
-## DOM Tree
+# DOM Tree
 
 ### 网页中的一切内容都是节点(Node)对象
 
-### 网页中的所有节点都是以树形结构存储的
+### 网页中的所有节点都是以树形结构存储
 
-### 根节点
-
-#### document
+### 根节点:document
 
 ### 节点对象三大属性
 
-#### nodeType
+#### nodeType:区分节点的类型
 
-##### 区分节点的类型
-
-##### document    9
-elem             1
-attr                2
-text               3
+1. document         9
+2. elem             1
+3. attr                2
+4. text               3
 
 ##### 何时
 
@@ -29,16 +25,12 @@ text               3
 
 ###### 无法进一步判断元素节点的名称
 
-##### 解决
+#### nodeName:获取节点名称
 
-#### nodeName
-
-##### 获取节点名称
-
-##### document   #document
-elem            全大写标签名
-attr              属性名
-text              #text
+1. document       #document
+2. elem            全大写标签名
+3. attr              属性名
+4. text              #text
 
 ##### 何时
 
@@ -48,22 +40,22 @@ text              #text
 
 ##### 节点值
 
-##### document   null
-elem            null
-attr              属性值
-text              文本内容
+1. document       null
+2. elem            null
+3. attr              属性值
+4. text              文本内容
 
-## DOM操作的固定套路
 
-### 找触发事件的元素
 
-#### 绑事件
+# DOM操作的固定套路
 
-##### 再找要修改的元素
+找触发事件的元素/绑事件
 
-###### 修改元素
+找要修改的元素/修改元素
 
-## 查找
+
+
+# 查找
 
 ### 按节点间关系查找
 
@@ -79,23 +71,23 @@ text              文本内容
 
 ###### 1. 父子
 
-####### parentNode
+-.  parentNode
 
-######## 最靠谱
+-.  最靠谱
 
-####### childNodes
+-.  childNodes
 
-######## 所有直接子节点
+-.  所有直接子节点
 
-####### firstChild
+-.  firstChild
 
-####### lastChild
+-.  lastChild
 
 ###### 2. 兄弟
 
-####### previousSibling
+-.  previousSibling
 
-####### nextSibling
+-.  nextSibling
 
 ##### 优: 全
 
@@ -115,25 +107,25 @@ text              文本内容
 
 ###### 1. 父子
 
-####### parentElement
+-.  parentElement
 
-######## 没有node结尾
+-.  没有node结尾
 
-####### children
+-.  children
 
-######## 所有直接子元素
+-.  所有直接子元素
 
-######### IE8+
+-.  IE8+
 
-####### firstElementChild
+-.  firstElementChild
 
-####### lastElementChild
+-.  lastElementChild
 
 ###### 2. 兄弟
 
-####### previousElementSibling
+-.  previousElementSibling
 
-####### nextElementSibling
+-.  nextElementSibling
 
 ##### 优: 不受看不见的换行和空字符的干扰
 
@@ -151,15 +143,17 @@ text              文本内容
 
 ###### 优: 
 
-####### 首次查找返回速度快
+-.  首次查找返回速度快
 
 ###### 缺: 
 
-####### 易造成反复查找DOM树
+-.  易造成反复查找DOM树
 
 ###### 遍历
 
-####### for(var i=0,len=children.length;i<len;i++)
+```
+for(var i=0,len=children.length;i<len;i++)   
+```
 
 ### 用查找API
 
@@ -183,11 +177,11 @@ text              文本内容
 
 ###### 强调: 
 
-####### 可用在任意父元素上
+-.  可用在任意父元素上
 
-####### 返回动态集合
+-.  返回动态集合
 
-####### 不仅查找直接子元素，且查找所有子代元素
+-.  不仅查找直接子元素，且查找所有子代元素
 
 ##### 按name
 
@@ -195,7 +189,7 @@ text              文本内容
 
 ###### 强调: 
 
-####### 只能在document上调用
+-.  只能在document上调用
 
 ##### 按class
 
@@ -203,9 +197,9 @@ text              文本内容
 
 ###### 强调: 
 
-####### 兼容性问题
+-.  兼容性问题
 
-######## IE9+
+-.  IE9+
 
 #### 按选择器查找
 
@@ -227,39 +221,39 @@ text              文本内容
 
 ###### getXXX
 
-####### 返回动态集合
+-.  返回动态集合
 
 ###### selector API
 
-####### 返回非动态集合
+-.  返回非动态集合
 
-######## 直接存储所有数据，反复访问集合，不需要反复查找DOM树
+-.  直接存储所有数据，反复访问集合，不需要反复查找DOM树
 
 ##### 2. 首次查询效率
 
 ###### getXXX更高
 
-####### 仅返回需要的内容，不需要准备完整数据
+-.  仅返回需要的内容，不需要准备完整数据
 
 ###### selector API低
 
-####### 每次都要返回完整数据
+-.  每次都要返回完整数据
 
 ##### 3. 难易: 
 
 ###### getXXX繁琐
 
-####### 何时
+-.  何时
 
-######## 如果只找一次即可获得想要的元素时
+-.  如果只找一次即可获得想要的元素时
 
 ###### selector API简单
 
-####### 何时
+-.  何时
 
-######## 如果需要多级复杂条件查找才能获得想要的元素时
+-.  如果需要多级复杂条件查找才能获得想要的元素时
 
-## 修改
+# 修改
 
 ### 内容
 
@@ -287,54 +281,48 @@ text              文本内容
 
 ###### 操作一切结构化文档的通用API
 
-####### 即可操作HTML，又可操作XML
+-.  即可操作HTML，又可操作XML
 
 ###### 特点
 
-####### 优
+-.  优:万能
 
-######## 万能
-
-####### 缺
-
-######## 繁琐
+-.  缺:繁琐
 
 ###### 获取
 
-####### 了解
+-.  获得属性节点对象
 
-######## 获得属性节点对象
-
-######### var attrNode=elem.attributes[i/属性名]
+-.  var attrNode=elem.attributes[i/属性名]
                                .getAttributeNode("属性名")
 
-######### var value=attrNode.value
+-.  var value=attrNode.value
 
-####### var value=elem.getAttribute("属性名")
+-.  var value=elem.getAttribute("属性名")
 
 ###### 修改
 
-####### elem.setAttribute("属性名",属性值)
+-.  elem.setAttribute("属性名",属性值)
 
-######## 如果属性不存在，也可set
+-.  如果属性不存在，也可set
 
 ###### 判断是否包含
 
-####### var bool=elem.hasAttribute("属性名")
+-.  var bool=elem.hasAttribute("属性名")
 
 ###### 移除
 
-####### elem.removeAttribute("属性名")
+-.  elem.removeAttribute("属性名")
 
-######## 只移除开始标签中的attribute，不删除内存中对象的property
+-.  只移除开始标签中的attribute，不删除内存中对象的property
 
 ###### 问题:
 
-####### 只能操作出现在开始标签中的attribute
+-.  只能操作出现在开始标签中的attribute
 
-####### 不能操作: 
+-.  不能操作: 
 
-######## .checked  .selected   .disabled
+-.  .checked  .selected   .disabled
 
 ###### 解决
 
@@ -342,31 +330,27 @@ text              文本内容
 
 ###### 专门操作HTML文档的简化版API
 
-####### 只对部分常用API进行简化
+-.  只对部分常用API进行简化
 
 ###### 特点: 
 
-####### 优
+-.  优:简单
 
-######## 简单
+-.  缺:不是万能
 
-####### 缺
-
-######## 不是万能
-
-######### 需要核心DOM的补充
+-.  需要核心DOM的补充
 
 ###### 如何
 
-####### elem.属性名
+-.  elem.属性名
 
 ###### 优: 
 
-####### 直接访问内存中的property属性
+-.  直接访问内存中的property属性
 
-####### 还可操作: 
+-.  还可操作: 
 
-######## .checked   .selected   .disabled
+-.  .checked   .selected   .disabled
 
 #### 扩展(自定义)属性
 
@@ -376,11 +360,11 @@ text              文本内容
 
 ###### 定义属性时: 
 
-####### data-属性名="值"
+-.  data-属性名="值"
 
 ###### 访问: 
 
-####### elem.dataset.属性名
+-.  elem.dataset.属性名
 
 ##### HTML DOM无法访问扩展属性
 
@@ -400,9 +384,7 @@ text              文本内容
 
 ##### 自定义扩展属性
 
-###### 只是attribute
-
-####### 不能用HTML DOM访问
+###### 只是attribute:不能用HTML DOM访问
 
 ### 样式
 
@@ -422,21 +404,15 @@ text              文本内容
 
 ##### 问题:
 
-###### 只能获得内联样式
-
-####### 无法访问从样式表层叠或继承来的完整样式
+###### 只能获得内联样式:无法访问从样式表层叠或继承来的完整样式
 
 ##### 解决
 
-###### 今后只要修改一个元素的样式: 
+###### 今后只要修改一个元素的样式: elem.style.css属性名=值
 
-####### elem.style.css属性名=值
+###### 今后只要获取一个元素的样式:getComputedStyle(elem).css属性名
 
-###### 今后只要获取一个元素的样式;
-
-####### getComputedStyle(elem).css属性名
-
-######## 只读
+-.  只读
 
 #### 内部/外部样式表
 
@@ -446,9 +422,7 @@ text              文本内容
 
 ###### var value=style.样式属性名
 
-###### 强调: 
-
-####### 通过getComputedStyle获得的样式对象是只读
+###### 强调: 通过getComputedStyle获得的样式对象是只读
 
 ##### 修改样式表中的样式
 
@@ -462,7 +436,7 @@ text              文本内容
 
 ##### 修改一个元素的样式都是先定义一套class，再按照需要设置元素的class属性
 
-## 添加和删除
+# 添加和删除
 
 ### 3步
 
@@ -492,37 +466,37 @@ text              文本内容
 
 ###### 如果同时添加父元素和子元素
 
-####### 先在内存中将子元素添加到父元素
-
-####### 再将父元素一次性添加到DOM树上
+在内存中将子元素添加到父元素/再将父元素一次性添加到DOM树上
 
 ###### 如果同时添加多个平级子元素
 
-####### 使用文档片段
+-.  使用文档片段
 
-######## 3步:
+-.  3步:
 
-######### 创建文档片段
+-.  创建文档片段
 
-########## var frag=document.createDocumentFragment();
+  var frag=document.createDocumentFragment();
 
-######### 将子元素临时添加到frag中
+-.  将子元素临时添加到frag中
 
-########## frag.appendChild(child)
+ frag.appendChild(child)
 
-######### 将frag添加到DOM树
+-.  将frag添加到DOM树
 
-########## parent.appendChild(frag)
+ parent.appendChild(frag)
 
-########## 强调: 
-
-########### frag不会成为页面元素，添加子元素后，frag自动释放
+-.  强调: frag不会成为页面元素，添加子元素后，frag自动释放
 
 ### 删除
 
 #### parent.removeChild(child)
 
-## HTML DOM常用对象
+
+
+
+
+# HTML DOM常用对象
 
 ### Image
 
@@ -538,23 +512,23 @@ text              文本内容
 
 ###### Option
 
-####### 创建
+-.  创建
 
-######## var opt=new Option(text,value)
+-.  var opt=new Option(text,value)
 
-####### 属性
+-.  属性
 
-######## text,value,index
+-.  text,value,index
 
 ##### length
 
 ###### 等效于
 
-####### .options.length
+-.  .options.length
 
-####### 清除所有option
+-.  清除所有option
 
-######## .length=0
+-.  .length=0
 
 ##### selectedIndex
 
@@ -564,7 +538,7 @@ text              文本内容
 
 ###### 当前选中项的value
 
-####### 如果选中项没有value，则使用text
+-.  如果选中项没有value，则使用text
 
 #### 事件
 
@@ -584,33 +558,33 @@ text              文本内容
 
 ###### tHead
 
-####### 创建
+-.  创建
 
-######## var tr=.insertRow(i)
+ var tr=.insertRow(i)
 
-######### 省略i，默认表示末尾追加
+ 省略i，默认表示末尾追加
 
-######### tr
+ tr
 
-########## 创建
+ 创建
 
-########### var td=.insertCell(i)
+ var td=.insertCell(i)
 
-########## 删除
+ 删除
 
-########### .deleteCell(i)
+ .deleteCell(i)
 
-########## 获取
+ 获取
 
-########### .cells
+ .cells
 
-####### 删除
+-.  删除
 
-######## .deleteRow(i)
+ .deleteRow(i)
 
-####### 获取
+-.  获取
 
-######## .rows
+ .rows
 
 ##### var tbody=.createTBody()
 
@@ -638,11 +612,11 @@ text              文本内容
 
 ###### 行分组.deleteRow(i)
 
-####### i是相对于当前行分组内的位置
+-.  i是相对于当前行分组内的位置
 
 ###### table.deleteRow(tr.rowIndex)
 
-####### rowIndex是相对于整个表中的位置
+-.  rowIndex是相对于整个表中的位置
 
 ### Form
 
@@ -666,7 +640,7 @@ text              文本内容
 
 ###### 手动提交
 
-####### 一般放在 input type="button" onclick="..."
+-.  一般放在 input type="button" onclick="..."
 
 #### 事件
 
@@ -674,11 +648,11 @@ text              文本内容
 
 ###### 无论以任何方式提交表单之前，都自动触发
 
-####### 专门用于验证所有！
+-.  专门用于验证所有！
 
-####### 不同调用submit()
+-.  不同调用submit()
 
-####### 如果未通过，就取消事件e.preventDefault()
+-.  如果未通过，就取消事件e.preventDefault()
 
 #### 获得表单中的元素
 
@@ -696,7 +670,7 @@ text              文本内容
 
 ###### .blur()
 
-## 在html中绑定事件
+# 在html中绑定事件
 
 ### 在HTML中绑定事件
 
@@ -712,15 +686,15 @@ text              文本内容
 
 ###### <button onclick="calc(this)"
 
-####### this指事件绑定所在的当前元素对象
+-.  this指事件绑定所在的当前元素对象
 
-####### function calc(btn){ btn->当前点击的按钮对象 }
+-.  function calc(btn){ btn->当前点击的按钮对象 }
 
 ##### 问题: 
 
 ###### 1. 不符合内容与行为分离的原则
 
-####### 不便于维护
+-.  不便于维护
 
 ###### 2. 如果动态生成的元素，无法手动添加事件绑定
 
@@ -730,6 +704,6 @@ text              文本内容
 
 ### 在js中动态绑定事件
 
-#### ANY.on事件名=function(){
+ANY.on事件名=function(){
     this->ANY元素
 }
