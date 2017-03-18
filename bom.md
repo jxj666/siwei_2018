@@ -124,9 +124,9 @@
 
 -     总距离: DISTANCE; 总时间: DURATION; 总步数: STEPS
 
--    # 时间间隔interval: DURATION/STEPS
+-    时间间隔interval: DURATION/STEPS
 
--    # 步长step: DISTANCE/STEPS
+-    步长step: DISTANCE/STEPS
 
 ##### timer
 
@@ -136,7 +136,7 @@
 
 -     记录已经移动的步数
 
--    # 判断何时停止
+-    判断何时停止
 
 #### 方法:
 
@@ -267,7 +267,7 @@ moveStep:function(callback){
 
 -     location.href="url"
 
--    # location="url"
+-    location="url"
 
 ## navigator
 
@@ -309,9 +309,9 @@ moveStep:function(callback){
 
 -     问题:
 
--    # 1. 无法给动态生成的元素绑定事件
+-    1. 无法给动态生成的元素绑定事件
 
--    # 2. 不便于管理和维护
+-    2. 不便于管理和维护
 
 ##### 在js中
 
