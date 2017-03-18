@@ -4,15 +4,17 @@
 
 ### [html5](h5.md)
 
-## [javascript](js.md)
+## javascript
+
+
 
 ## [dom](dom.md)
 
-### [bom](bom.md)
+## [bom](bom.md)
 
 ### [ajax](ajax.md)
 
-## [jQuery](jq.md)
+### [jQuery](jq.md)
 
 
 ##### 如果您觉得有点用,给颗心呗
