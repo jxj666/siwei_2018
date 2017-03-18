@@ -1,6 +1,6 @@
 # BOM
 
-## window
+# window
 
 ### 2个角色
 
@@ -18,15 +18,13 @@
 
 ###### 自定义名称
 
-####### 在新窗口打开，只能打开一个
+-.    在新窗口打开，只能打开一个
 
 ###### _blank, _self
 
 ##### 其中config:
 
 ###### “left=?,top=?,width=?,height=?”
-
-####### 了解
 
 #### 关闭
 
@@ -40,15 +38,15 @@
 
 ###### 完整大小: 
 
-####### .outerWidth
+-.    .outerWidth
 
-####### .outerHeight
+-.    .outerHeight
 
 ###### 文档显示区大小
 
-####### .innerWidth
+-.    .innerWidth
 
-####### .innerHeight
+-.    .innerHeight
 
 ##### 方法
 
@@ -60,9 +58,9 @@
 
 ##### 属性
 
-###### .screenLeft||.screenX
+###### .screenLeft / .screenX
 
-###### .screenTop||.screenY
+###### .screenTop / .screenY
 
 ##### 方法
 
@@ -80,19 +78,17 @@
 
 ###### 只要任务需要反复执行时
 
-##### 3件事
-
 ###### 1. 任务函数
 
-####### function task(){...}
+-.    function task(){...}
 
 ###### 2. 启动定时器
 
-####### timer=setInterval(task, interval)
+-.    timer=setInterval(task, interval)
 
 ###### 3. 停止定时器
 
-####### clearInterval(timer); timer=null
+-.    clearInterval(timer); timer=null
 
 #### 一次性定时器
 
@@ -102,19 +98,17 @@
 
 ###### 任务仅执行一次，就释放
 
-##### 3件事
-
 ###### 1. 任务函数
 
-####### function task(){...}
+-.    function task(){...}
 
 ###### 2. 启动定时器
 
-####### timer=setTimeout(task, wait)
+-.    timer=setTimeout(task, wait)
 
 ###### 3. 停止定时器
 
-####### clearTimeout(timer); timer=null
+-.    clearTimeout(timer); timer=null
 
 #### 定时器原理
 
@@ -128,51 +122,56 @@
 
 ###### 三要素
 
-####### 总距离: DISTANCE; 总时间: DURATION; 总步数: STEPS
+-.    总距离: DISTANCE; 总时间: DURATION; 总步数: STEPS
 
-######## 时间间隔interval: DURATION/STEPS
+-.   # 时间间隔interval: DURATION/STEPS
 
-######## 步长step: DISTANCE/STEPS
+-.   # 步长step: DISTANCE/STEPS
 
 ###### timer
 
-####### 只要可能停止
+-.    只要可能停止
 
 ###### moved
 
-####### 记录已经移动的步数
+-.    记录已经移动的步数
 
-######## 判断何时停止
+-.   # 判断何时停止
 
 ##### 方法:
 
 ###### 动画启动
 
-####### move:function(){
+```
+ move:function(){
     setInterval(this.moveStep.bind(this), interval)
 }
+```
 
 ###### 移动一步
 
-####### moveStep:function(){
+```
+  moveStep:function(){
     ...
     moved++;
     if(moved>=STEPS){
          clearInterval(timer)
     }
 }
+```
 
 ##### 让一项任务在动画结束后才执行: 
 
 ###### 动画启动
-
-####### move:function(callback){
+```
+ move:function(callback){
     setInterval(this.moveStep.bind(this,callback), interval)
 }
-
+```
 ###### 移动一步
 
-####### moveStep:function(callback){
+```
+moveStep:function(callback){
     ...
     moved++;
     if(moved>=STEPS){
@@ -180,10 +179,11 @@
          callback();
     }
 }
+```
 
 ###### 启动动画
 
-####### move(function(){...//在动画结束后才执行的代码段...})
+-.    move(function(){...//在动画结束后才执行的代码段...})
 
 #### 停止定时器
 
@@ -201,21 +201,13 @@
 
 ##### 媒体查询
 
-###### lg
+###### lg: 1200
 
-####### 1200
+###### md:  992
 
-###### md
+###### sm:  768
 
-####### 992
-
-###### sm
-
-####### 768
-
-###### xs
-
-####### 480
+###### xs:  480
 
 #### 去掉任务栏之后剩余的可用大小
 
@@ -273,9 +265,9 @@
 
 ###### location.assign("url")
 
-####### location.href="url"
+-.    location.href="url"
 
-######## location="url"
+-.   # location="url"
 
 ### navigator
 
@@ -313,35 +305,35 @@
 
 ###### 在HTML中
 
-####### <ANY on事件名="js语句(this)"
+ <ANY on事件名="js语句(this)"
 
-####### 问题:
+-.    问题:
 
-######## 1. 无法给动态生成的元素绑定事件
+-.   # 1. 无法给动态生成的元素绑定事件
 
-######## 2. 不便于管理和维护
+-.   # 2. 不便于管理和维护
 
 ###### 在js中
 
-####### 2种
+-.    2种
 
-######## ANY.on事件名=function(){
+ANY.on事件名=function(){
     this->ANY
 }
 
-######### 问题
+-.    问题
 
-########## 只能为一个事件处理函数绑定一个函数对象
+-.    只能为一个事件处理函数绑定一个函数对象
 
-######## ANY.addEventListener("事件名",fn[,capture])
+ ANY.addEventListener("事件名",fn[,capture])
 
-######### 可为一个事件处理函数同时绑定多个函数对象
+-.    可为一个事件处理函数同时绑定多个函数对象
 
-######### .removeEventListener("事件名",fn)
+-.    .removeEventListener("事件名",fn)
 
-########## 如果可能解除绑定，则绑定时必须用有名的函数
+-.   如果可能解除绑定，则绑定时必须用有名的函数
 
-######### IE8: .attachEvent("on事件名",fn)
+-.    IE8: .attachEvent("on事件名",fn)
 
 #### 事件周期
 
@@ -349,27 +341,25 @@
 
 ###### 3阶段
 
-####### 捕获
+-.    捕获
 
-######## 由外向内，记录各级父元素绑定的事件处理函数
+由外向内，记录各级父元素绑定的事件处理函数
 
-####### 目标触发
+-.    目标触发
 
-######## 首先触发目标元素上绑定的处理函数
+首先触发目标元素上绑定的处理函数
 
-######## 目标元素
+目标元素:实际触发事件的元素
 
-######### 实际触发事件的元素
+-.    冒泡
 
-####### 冒泡
-
-######## 由目标元素向外，按捕获顺序反向触发各级父元素上的处理函数
+由目标元素向外，按捕获顺序反向触发各级父元素上的处理函数
 
 ##### IE8
 
 ###### 2阶段
 
-####### 没有捕获阶段
+-.    没有捕获阶段
 
 #### 事件对象
 
@@ -389,15 +379,15 @@
 
 ###### DOM标准
 
-####### 事件对象默认作为处理函数的第一个参数自动传入
+-.    事件对象默认作为处理函数的第一个参数自动传入
 
 ###### IE8
 
-####### 将事件对象自动保存在全局变量window.event中
+-.    将事件对象自动保存在全局变量window.event中
 
 ###### 兼容:
 
-####### e=e||window.event
+-.    e=e||window.event
 
 #### 事件操作
 
@@ -409,37 +399,37 @@
 
 ###### 问题
 
-####### 每个事件监听都是一个对象
+-.    每个事件监听都是一个对象
 
-####### 事件触发时，浏览器会轮询每个事件监听对象，确定触发谁
+-.    事件触发时，浏览器会轮询每个事件监听对象，确定触发谁
 
-####### 事件监听对象过多，导致响应速度降低
+-.    事件监听对象过多，导致响应速度降低
 
 ###### 优化:
 
-####### 尽量少的添加事件监听对象
+-.    尽量少的添加事件监听对象
 
-####### 如何
+-.    如何
 
-######## 如果多个平级子元素同时绑定相同事件处理函数时
+如果多个平级子元素同时绑定相同事件处理函数时
 
-######## 只要在父元素绑定一次，所有子元素共用即可
+只要在父元素绑定一次，所有子元素共用即可
 
-####### 问题:
+-.    问题:
 
-######## 1. 如何获得目标元素
+1. 如何获得目标元素
 
-######### this->父元素 X
+this->父元素 X
 
-######### e.target
+e.target
 
-########## IE8: e.srcElement
+IE8: e.srcElement
 
-########### 兼容: var target=e.target||e.srcElement
-
-######## 2. 鉴别目标元素
-
-######### 判断target的属性或标签名
+兼容: 
+```
+var target=e.target||e.srcElement
+```
+ 2. 鉴别目标元素:判断target的属性或标签名
 
 ##### 取消事件
 
@@ -449,38 +439,38 @@
 
 ###### 相对于屏幕左上角坐标
 
-####### e.screenX/screenY
+-.    e.screenX / screenY
 
 ###### 相对于文档显示区左上角坐标
 
-####### e.clientX||e.x
+-.    e.clientX / e.x
 
-####### e.clientY||e.y
+-.    e.client / e.y
 
 ###### 相对于body左上角坐标
 
-####### e.pageX/pageY
+-.    e.pageX / pageY
 
 ###### 相对于所在元素左上角坐标
 
-####### e.offsetX/offsetY
+-.    e.offsetX / offsetY
 
 ##### 页面滚动
 
 ###### 事件
 
-####### .onscroll
+-.    .onscroll
 
 ###### 滚动的距离
 
-####### document.body.scrollTop||document.documentElement.scrollTop
+-.    document.body.scrollTop / document.documentElement.scrollTop
 
 ###### 方法
 
-####### window.scrollTo/By(left,top)
+-.    window.scrollTo / By(left,top)
 
 ###### css
 
-####### scrollTop
+-.    scrollTop
 
 ### document
