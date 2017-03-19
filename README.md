@@ -9,8 +9,8 @@
 [内置对象](js/01object.md)
 [正则表达式](js/01regexp.md)
 [String](js/01string.md)
-
-
+[es5](js/51es5.md)
+[es6](js/51es6.md)
 
 
 ## [dom](dom.md) / [bom](bom.md)
