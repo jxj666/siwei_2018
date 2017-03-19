@@ -1,322 +1,297 @@
-# AJAX知识点整理
+# 前后交互知识点整理
 
-## 数据库服务器
+# 数据库服务器
 
-### SQL
+## SQL
 
-#### SET NAMES UTF8;
+### SET NAMES UTF8;
 
-#### DROP DATABASE IF EXISTS jd;
+### DROP DATABASE IF EXISTS jd;
 
-#### CREATE DATABASE jd CHARSET=UTF8;
+### CREATE DATABASE jd CHARSET=UTF8;
 
-#### USE jd;
+### USE jd;
 
-#### CREATE TABLE product( pid INT, pname VARCHAR(32));
+### CREATE TABLE product( pid INT, pname VARCHAR(32));
 
-#### INSERT INTO product VALUES(10, 'xxx');
+### INSERT INTO product VALUES(10, 'xxx');
 
-#### DELETE FROM product WHERE pid=10;
+### DELETE FROM product WHERE pid=10;
 
-#### UPDATE product SET pname='xxx' WHERE pid=10;
+### UPDATE product SET pname='xxx' WHERE pid=10;
 
-#### SELECT pid, pname FROM product;
+### SELECT pid, pname FROM product;
 
-#### 语句的分类
+### 语句的分类
 
-##### DDL
+#### DDL
 
-###### CREATE
+##### CREATE
 
-###### DROP
+##### DROP
 
-###### ALTER
+##### ALTER
 
-###### TRUNCATE
+##### TRUNCATE
 
-##### DML
+#### DML
 
-###### INSERT
+##### INSERT
 
-###### DELETE
+##### DELETE
 
-###### UPDATE
+##### UPDATE
 
-##### DQL
+#### DQL
 
-###### SELECT
+##### SELECT
 
-##### DCL
+#### DCL
 
-###### GRANT
+##### GRANT
 
-###### REVOKE
+##### REVOKE
 
-## Web服务器
+# Web服务器
 
-### 静态Web服务器
+## 静态Web服务器
 
-#### HTML
+### HTML
 
-#### CSS
+### CSS
 
-#### JS
+### JS
 
-#### 图片
+### 图片
 
-#### Flash
+### Flash
 
-#### 视频音频
+### 视频音频
 
-### 动态Web服务器
+## 动态Web服务器
 
-#### JSP
+### JSP
 
-#### ASP.NET
+### ASP.NET
 
-#### PHP
+### PHP
 
-##### 背景知识
+#### 背景知识
 
-##### 环境搭建
+#### 环境搭建
 
-##### 数据类型
+#### 数据类型
 
-###### 值类型
+##### 值类型
 
-####### int
+-   int
 
-####### float
+-   float
 
-####### string
+-   string : ‘’ / “”
 
-######## ‘’
+-   boolean
 
-######## “”
+##### 复合类型
 
-####### boolean
+-   object
 
-###### 复合类型
+-   array : 索引 / 关联
 
-####### object
+##### 特殊类型
 
-####### array
+-   null
 
-######## 索引
+-   resource
 
-######## 关联
+#### 变量常量
 
-###### 特殊类型
+#### 运算符
 
-####### null
+##### 字符串拼接
 
-####### resource
+-   .
 
-##### 变量常量
+#### 逻辑结构
 
-##### 运算符
+##### 选择结构
 
-###### 字符串拼接
+##### 循环结构
 
-####### .
+-   foreach($list as $k=>$v){  }
 
-##### 逻辑结构
+#### 函数和对象
 
-###### 选择结构
+##### function add($n1, $n2){ ... }
 
-###### 循环结构
+#### 预定义函数和对象
 
-####### foreach($list as $k=>$v){  }
+##### require()
 
-##### 函数和对象
+##### die()
 
-###### function add($n1, $n2){ ... }
+##### @
 
-##### 预定义函数和对象
+##### mysqli_connect()
 
-###### require()
+##### mysqli_query()
 
-###### die()
+##### mysqli_insert_id()
 
-###### @
+##### mysqli_affected_rows()
 
-###### mysqli_connect()
+##### mysqli_fetch_row()
 
-###### mysqli_query()
+##### mysqli_fetch_assoc()
 
-###### mysqli_insert_id()
+##### mysqli_fetch_all()
 
-###### mysqli_affected_rows()
+##### substr()
 
-###### mysqli_fetch_row()
+##### rand()
 
-###### mysqli_fetch_assoc()
+##### time()
 
-###### mysqli_fetch_all()
+##### .....
 
-###### substr()
+### Node.js
 
-###### rand()
+# HTTP协议
 
-###### time()
+## 请求消息
 
-###### .....
+### 起始行
 
-#### Node.js
+#### 请求方法
 
-## HTTP协议
+#### 空格
 
-### 请求消息
+#### URI
 
-#### 起始行
+#### 空格
 
-##### 请求方法
+#### 协议版本
 
-##### 空格
+### 请求头
 
-##### URI
+#### Content-Type
 
-##### 空格
+##### text/plain
 
-##### 协议版本
+##### application/x-www-form-urlencoded
 
-#### 请求头
+##### multipart/form-data
 
-##### Content-Type
+### CRLF
 
-###### text/plain
+### 请求主体
 
-###### application/x-www-form-urlencoded
+## 响应消息
 
-###### multipart/form-data
+### 起始行
 
-#### CRLF
+#### 协议版本
 
-#### 请求主体
+#### 空格
 
-### 响应消息
+#### 响应状态码
 
-#### 起始行
+##### 1xx
 
-##### 协议版本
+##### 2xx
 
-##### 空格
+##### 3xx
 
-##### 响应状态码
+##### 4xx
 
-###### 1xx
+##### 5xx
 
-###### 2xx
+#### 空格
 
-###### 3xx
+#### 原因短句
 
-###### 4xx
+### 响应头
 
-###### 5xx
+#### Content-Type
 
-##### 空格
+##### text/plain
 
-##### 原因短句
+##### text/html
 
-#### 响应头
+##### application/javascript
 
-##### Content-Type
+##### application/xml
 
-###### text/plain
+##### application/json
 
-###### text/html
+##### image/png
 
-###### application/javascript
+##### audio/mpeg3
 
-###### application/xml
+##### ....
 
-###### application/json
+### CRLF
 
-###### image/png
+### 响应主体
 
-###### audio/mpeg3
+# 原生AJAX
 
-###### ....
+## 概述
 
-#### CRLF
+## 发起两种请求消息
 
-#### 响应主体
+### GET
 
-## 原生AJAX
+### POST
 
-### 概述
+## 接收四种响应消息
 
-### 发起两种请求消息
+### text/plain
 
-#### GET
+#### xhr.responseText
 
-##### //1
+### text/html
 
-##### //2
+#### parent.innerHTML = xhr.responseText
 
-##### //3
+### application/javascript
 
-##### //4
+#### eval( xhr.responseText )
 
-#### POST
+### application/xml
 
-##### //1
+#### xhr.responseXML
 
-##### //2
+### application/json
 
-##### //3
+#### JSON.parse(xhr.responseText)
 
-##### //3.5
+# jQuery中AJAX
 
-##### //4
+## load()
 
-### 接收四种响应消息
+### $('div#header').load('h.php')
 
-#### text/plain
+## $.get()
 
-##### xhr.responseText
+### $.get('suggest.php', {kw: 'abc'}, function(data){  })
 
-#### text/html
+## $.post()
 
-##### parent.innerHTML = xhr.responseText
+### $.post('register.php', {uname:'tom', upwd:'123'}, function(data){  })
 
-#### application/javascript
+## $.getScript()
 
-##### eval( xhr.responseText )
+### $.getScript('i18n.php')
 
-#### application/xml
+## $.getJSON()
 
-##### xhr.responseXML
+### $.getJSON('product.php', function(data){  })
 
-#### application/json
+## $.ajax()
 
-##### JSON.parse(xhr.responseText)
-
-## jQuery中AJAX
-
-### load()
-
-#### $('div#header').load('h.php')
-
-### $.get()
-
-#### $.get('suggest.php', {kw: 'abc'}, function(data){  })
-
-### $.post()
-
-#### $.post('register.php', {uname:'tom', upwd:'123'}, function(data){  })
-
-### $.getScript()
-
-#### $.getScript('i18n.php')
-
-### $.getJSON()
-
-#### $.getJSON('product.php', function(data){  })
-
-### $.ajax()
-
-#### $.ajax( {
+ ```
+$.ajax( {
   type: 'GET',
   url: 'x.php',
   data: 'k=v',
@@ -325,3 +300,4 @@
   error: fn,
   complete: fn
 } )
+```

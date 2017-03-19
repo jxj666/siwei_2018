@@ -71,23 +71,23 @@
 
 ###### 1. 父子
 
--.  parentNode
+-  parentNode
 
--.  最靠谱
+-  最靠谱
 
--.  childNodes
+-  childNodes
 
--.  所有直接子节点
+-  所有直接子节点
 
--.  firstChild
+-  firstChild
 
--.  lastChild
+-  lastChild
 
 ###### 2. 兄弟
 
--.  previousSibling
+-  previousSibling
 
--.  nextSibling
+-  nextSibling
 
 ##### 优: 全
 
@@ -107,25 +107,25 @@
 
 ###### 1. 父子
 
--.  parentElement
+-  parentElement
 
--.  没有node结尾
+-  没有node结尾
 
--.  children
+-  children
 
--.  所有直接子元素
+-  所有直接子元素
 
--.  IE8+
+-  IE8+
 
--.  firstElementChild
+-  firstElementChild
 
--.  lastElementChild
+-  lastElementChild
 
 ###### 2. 兄弟
 
--.  previousElementSibling
+-  previousElementSibling
 
--.  nextElementSibling
+-  nextElementSibling
 
 ##### 优: 不受看不见的换行和空字符的干扰
 
@@ -143,11 +143,11 @@
 
 ###### 优: 
 
--.  首次查找返回速度快
+-  首次查找返回速度快
 
 ###### 缺: 
 
--.  易造成反复查找DOM树
+-  易造成反复查找DOM树
 
 ###### 遍历
 
@@ -177,11 +177,11 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 强调: 
 
--.  可用在任意父元素上
+-  可用在任意父元素上
 
--.  返回动态集合
+-  返回动态集合
 
--.  不仅查找直接子元素，且查找所有子代元素
+-  不仅查找直接子元素，且查找所有子代元素
 
 ##### 按name
 
@@ -189,7 +189,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 强调: 
 
--.  只能在document上调用
+-  只能在document上调用
 
 ##### 按class
 
@@ -197,9 +197,9 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 强调: 
 
--.  兼容性问题
+-  兼容性问题
 
--.  IE9+
+-  IE9+
 
 #### 按选择器查找
 
@@ -221,37 +221,37 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### getXXX
 
--.  返回动态集合
+-  返回动态集合
 
 ###### selector API
 
--.  返回非动态集合
+-  返回非动态集合
 
--.  直接存储所有数据，反复访问集合，不需要反复查找DOM树
+-  直接存储所有数据，反复访问集合，不需要反复查找DOM树
 
 ##### 2. 首次查询效率
 
 ###### getXXX更高
 
--.  仅返回需要的内容，不需要准备完整数据
+-  仅返回需要的内容，不需要准备完整数据
 
 ###### selector API低
 
--.  每次都要返回完整数据
+-  每次都要返回完整数据
 
 ##### 3. 难易: 
 
 ###### getXXX繁琐
 
--.  何时
+-  何时
 
--.  如果只找一次即可获得想要的元素时
+-  如果只找一次即可获得想要的元素时
 
 ###### selector API简单
 
--.  何时
+-  何时
 
--.  如果需要多级复杂条件查找才能获得想要的元素时
+-  如果需要多级复杂条件查找才能获得想要的元素时
 
 # 修改
 
@@ -281,48 +281,48 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 操作一切结构化文档的通用API
 
--.  即可操作HTML，又可操作XML
+-  即可操作HTML，又可操作XML
 
 ###### 特点
 
--.  优:万能
+-  优:万能
 
--.  缺:繁琐
+-  缺:繁琐
 
 ###### 获取
 
--.  获得属性节点对象
+-  获得属性节点对象
 
--.  var attrNode=elem.attributes[i/属性名]
+-  var attrNode=elem.attributes[i/属性名]
                                .getAttributeNode("属性名")
 
--.  var value=attrNode.value
+-  var value=attrNode.value
 
--.  var value=elem.getAttribute("属性名")
+-  var value=elem.getAttribute("属性名")
 
 ###### 修改
 
--.  elem.setAttribute("属性名",属性值)
+-  elem.setAttribute("属性名",属性值)
 
--.  如果属性不存在，也可set
+-  如果属性不存在，也可set
 
 ###### 判断是否包含
 
--.  var bool=elem.hasAttribute("属性名")
+-  var bool=elem.hasAttribute("属性名")
 
 ###### 移除
 
--.  elem.removeAttribute("属性名")
+-  elem.removeAttribute("属性名")
 
--.  只移除开始标签中的attribute，不删除内存中对象的property
+-  只移除开始标签中的attribute，不删除内存中对象的property
 
 ###### 问题:
 
--.  只能操作出现在开始标签中的attribute
+-  只能操作出现在开始标签中的attribute
 
--.  不能操作: 
+-  不能操作: 
 
--.  .checked  .selected   .disabled
+-  .checked  .selected   .disabled
 
 ###### 解决
 
@@ -330,27 +330,27 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 专门操作HTML文档的简化版API
 
--.  只对部分常用API进行简化
+-  只对部分常用API进行简化
 
 ###### 特点: 
 
--.  优:简单
+-  优:简单
 
--.  缺:不是万能
+-  缺:不是万能
 
--.  需要核心DOM的补充
+-  需要核心DOM的补充
 
 ###### 如何
 
--.  elem.属性名
+-  elem.属性名
 
 ###### 优: 
 
--.  直接访问内存中的property属性
+-  直接访问内存中的property属性
 
--.  还可操作: 
+-  还可操作: 
 
--.  .checked   .selected   .disabled
+-  .checked   .selected   .disabled
 
 #### 扩展(自定义)属性
 
@@ -360,11 +360,11 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 定义属性时: 
 
--.  data-属性名="值"
+-  data-属性名="值"
 
 ###### 访问: 
 
--.  elem.dataset.属性名
+-  elem.dataset.属性名
 
 ##### HTML DOM无法访问扩展属性
 
@@ -412,7 +412,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 今后只要获取一个元素的样式:getComputedStyle(elem).css属性名
 
--.  只读
+-  只读
 
 #### 内部/外部样式表
 
@@ -470,23 +470,23 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 如果同时添加多个平级子元素
 
--.  使用文档片段
+-  使用文档片段
 
--.  3步:
+-  3步:
 
--.  创建文档片段
+-  创建文档片段
 
   var frag=document.createDocumentFragment();
 
--.  将子元素临时添加到frag中
+-  将子元素临时添加到frag中
 
  frag.appendChild(child)
 
--.  将frag添加到DOM树
+-  将frag添加到DOM树
 
  parent.appendChild(frag)
 
--.  强调: frag不会成为页面元素，添加子元素后，frag自动释放
+-  强调: frag不会成为页面元素，添加子元素后，frag自动释放
 
 ### 删除
 
@@ -512,23 +512,23 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### Option
 
--.  创建
+-  创建
 
--.  var opt=new Option(text,value)
+-  var opt=new Option(text,value)
 
--.  属性
+-  属性
 
--.  text,value,index
+-  text,value,index
 
 ##### length
 
 ###### 等效于
 
--.  .options.length
+-  .options.length
 
--.  清除所有option
+-  清除所有option
 
--.  .length=0
+-  .length=0
 
 ##### selectedIndex
 
@@ -538,7 +538,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 当前选中项的value
 
--.  如果选中项没有value，则使用text
+-  如果选中项没有value，则使用text
 
 #### 事件
 
@@ -558,7 +558,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### tHead
 
--.  创建
+-  创建
 
  var tr=.insertRow(i)
 
@@ -578,11 +578,11 @@ for(var i=0,len=children.length;i<len;i++)
 
  .cells
 
--.  删除
+-  删除
 
  .deleteRow(i)
 
--.  获取
+-  获取
 
  .rows
 
@@ -612,11 +612,11 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 行分组.deleteRow(i)
 
--.  i是相对于当前行分组内的位置
+-  i是相对于当前行分组内的位置
 
 ###### table.deleteRow(tr.rowIndex)
 
--.  rowIndex是相对于整个表中的位置
+-  rowIndex是相对于整个表中的位置
 
 ### Form
 
@@ -640,7 +640,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 手动提交
 
--.  一般放在 input type="button" onclick="..."
+-  一般放在 input type="button" onclick="..."
 
 #### 事件
 
@@ -648,11 +648,11 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### 无论以任何方式提交表单之前，都自动触发
 
--.  专门用于验证所有！
+-  专门用于验证所有！
 
--.  不同调用submit()
+-  不同调用submit()
 
--.  如果未通过，就取消事件e.preventDefault()
+-  如果未通过，就取消事件e.preventDefault()
 
 #### 获得表单中的元素
 
@@ -686,15 +686,15 @@ for(var i=0,len=children.length;i<len;i++)
 
 ###### <button onclick="calc(this)"
 
--.  this指事件绑定所在的当前元素对象
+-  this指事件绑定所在的当前元素对象
 
--.  function calc(btn){ btn->当前点击的按钮对象 }
+-  function calc(btn){ btn->当前点击的按钮对象 }
 
 ##### 问题: 
 
 ###### 1. 不符合内容与行为分离的原则
 
--.  不便于维护
+-  不便于维护
 
 ###### 2. 如果动态生成的元素，无法手动添加事件绑定
 

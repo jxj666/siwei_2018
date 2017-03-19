@@ -12,7 +12,7 @@
 
 ## [bom](bom.md)
 
-### [ajax](ajax.md)
+### [前后端交互](ajax.md)
 
 ### [jQuery](jq.md)
 
