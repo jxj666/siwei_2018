@@ -8,7 +8,7 @@
 
 [内置对象](js/01object.md)
 [正则表达式](js/01regexp.md)
-[String](js/01srting.md)
+[String](js/01string.md)
 
 
 
