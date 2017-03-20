@@ -1,6 +1,6 @@
 # Error
 
-## try{
+# try{
     可能出错的代码
 }catch(err){
     只有出错才执行的错误处理代码
@@ -10,32 +10,32 @@
     释放资源
 }
 
-## err错误对象
+# err错误对象
 
-### 什么是
+## 什么是
 
-#### 在发生错误时自动创建的封装错误信息的对象
+### 在发生错误时自动创建的封装错误信息的对象
 
-### name
+## name
 
-#### 错误类型
+### 错误类型
 
-##### SyntaxError,  ReferenceError,  TypeError,  RangeError,   EvalError， URIError
+#### SyntaxError,  ReferenceError,  TypeError,  RangeError,   EvalError， URIError
 
-### message
+## message
 
-#### 错误提示信息
+### 错误提示信息
 
-### String(err)
+## String(err)
 
-#### 错误类型:错误提示信息
+### 错误类型:错误提示信息
 
-## 优化
+# 优化
 
-### 如果可以提前预知错误的原因
+## 如果可以提前预知错误的原因
 
-#### 建议用if...else...代替try...catch
+### 建议用if...else...代替try...catch
 
-## 抛出自定义错误
+# 抛出自定义错误
 
-### throw new Error("自定义错误信息")
+## throw new Error("自定义错误信息")

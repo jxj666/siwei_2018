@@ -9,6 +9,13 @@
 [内置对象](js/01object.md)
 [正则表达式](js/01regexp.md)
 [String](js/01string.md)
+[array](js/11array.md)
+[date](js/11date.md)
+[math](js/11math.md)
+[regexp](js/11regexp.md)
+[error](js/12error.md)
+[function](21function.md)
+[oop](22oop.md)
 [es5](js/51es5.md)
 [es6](js/51es6.md)
 
