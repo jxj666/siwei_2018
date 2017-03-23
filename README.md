@@ -26,6 +26,8 @@
 
 ### [jQuery](jq.md)
 
+### [基本必背 API](jibenapi.md)
+
 
 ##### 如果您觉得有点用,给颗心呗
 ### [我的2017学习前端的笔记](http://jxjweb.top/)
