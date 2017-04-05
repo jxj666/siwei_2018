@@ -14,8 +14,8 @@
 [math](js/11math.md)
 [regexp](js/11regexp.md)
 [error](js/12error.md)
-[function](21function.md)
-[oop](22oop.md)
+[function](js/21function.md)
+[oop](js/22oop.md)
 [es5](js/51es5.md)
 [es6](js/51es6.md)
 
@@ -26,9 +26,9 @@
 
 ### [jQuery](jq.md)
 
-### [基本必背 API](jibenapi.md)
+### [必背 API](jibenapi.md)
 
-##### [面试必背](ms.md)
+### [面试必背](ms.md)
 
 
 ##### 如果您觉得有点用,给颗心呗
