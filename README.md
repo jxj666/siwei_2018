@@ -18,15 +18,12 @@
 [oop](js/22oop.md)
 [es5](js/51es5.md)
 [es6](js/51es6.md)
+[jQuery](js/jq.md)
 
 
 ## [dom](dom.md) / [bom](bom.md)
 
 ### [前后端交互](ajax.md)
-
-### [jQuery](jq.md)
-
-### [必背 API](jibenapi.md)
 
 ### [面试必背](ms.md)
 

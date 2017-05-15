@@ -14,8 +14,8 @@
 
 1. document         9
 2. elem             1
-3. attr                2
-4. text               3
+3. attr             2
+4. text             3
 
 ##### 何时
 
@@ -47,7 +47,7 @@
 
 
 
-# DOM操作的固定套路
+# DOM操作的固定套路(1.绑事件 2.改元素)
 
 找触发事件的元素/绑事件
 
@@ -73,15 +73,14 @@
 
 -  parentNode
 
--  最靠谱
 
 -  childNodes
 
--  所有直接子节点
+1.  所有直接子节点
 
--  firstChild
+2. firstChild
 
--  lastChild
+3. lastChild
 
 ###### 2. 兄弟
 
@@ -91,11 +90,9 @@
 
 ##### 优: 全
 
-##### 问题: 
+##### 问题:  受看不见的换行和空字符的干扰
 
-###### 受看不见的换行和空字符的干扰
-
-##### 解决
+##### 解决:元素树
 
 #### 元素树
 
@@ -115,11 +112,11 @@
 
 -  所有直接子元素
 
--  IE8+
+1.  IE8+
 
--  firstElementChild
+2. firstElementChild
 
--  lastElementChild
+3. lastElementChild
 
 ###### 2. 兄弟
 
@@ -131,7 +128,7 @@
 
 ##### 缺: 不包含一切文本节点
 
-###### 可用.innerHTML
+###### 解决: .innerHTML
 
 ##### 兼容性问题： IE9+
 
@@ -263,11 +260,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 #### .textContent
 
-##### 获取或设置开始标签到结束标签之间的纯文本内容
-
-###### 去掉所有标签
-
-###### 翻译转义字符为原文
+##### 获取或设置开始标签到结束标签之间的纯文本内容,去掉所有标签,翻译转义字符为原文
 
 ##### IE8: 
 
@@ -293,12 +286,12 @@ for(var i=0,len=children.length;i<len;i++)
 
 -  获得属性节点对象
 
--  var attrNode=elem.attributes[i/属性名]
+1.  var attrNode=elem.attributes[i/属性名]
                                .getAttributeNode("属性名")
 
--  var value=attrNode.value
+2.  var value=attrNode.value
 
--  var value=elem.getAttribute("属性名")
+3.  var value=elem.getAttribute("属性名")
 
 ###### 修改
 
@@ -348,9 +341,7 @@ for(var i=0,len=children.length;i<len;i++)
 
 -  直接访问内存中的property属性
 
--  还可操作: 
-
--  .checked   .selected   .disabled
+-  还可操作:  .checked   .selected   .disabled
 
 #### 扩展(自定义)属性
 

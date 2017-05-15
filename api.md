@@ -1,5 +1,7 @@
 # 前端 js/dom/bom 必背的 api
 
+## javascript
+
 ```
 var str=arr.toString()
 var num=Number(numstr)
@@ -47,6 +49,8 @@ Object.seal(obj)
 Object.freeze(obj)
 value/writable/enumerabale/configurable
 ```
+
+## dom
 ```
 element/attribute/text
 nodeType:1/2/3/9
@@ -83,6 +87,8 @@ var form=document.form[i/id/name]
 form.elements[i/id/name]
 onsubmit
 ```
+
+## bom
 ```
 outerWidth/outerHeight
 innerWidth/innerHeight
