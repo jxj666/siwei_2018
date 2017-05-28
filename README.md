@@ -4,6 +4,11 @@
 
 ### [html5](h5.md)
 
+## 开发 API
+
+### [jQuery1.12](mainKey/jq112.md)
+### [git](mainKey/git.md)
+
 ## javascript
 
 [内置对象](js/01object.md)
@@ -26,6 +31,7 @@
 ### [前后端交互](ajax.md)
 
 ### [面试必背](ms.md)
+
 
 
 ##### 如果您觉得有点用,给颗心呗
