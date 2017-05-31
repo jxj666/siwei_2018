@@ -2,15 +2,13 @@
 
 ## 自己总结的前端最基础知识
 
-### [html5](h5.md)
+## [html5](h5.md)
 
 ## 开发 API
 
-### [jQuery3](mainKey/jq3.md)
-
-### [jQuery1](mainKey/jq1.md)
-
-### [git](mainKey/git.md)
+ [jQuery3](mainKey/jq3.md)
+ [jQuery1](mainKey/jq1.md)
+ [git](mainKey/git.md)
 
 ## javascript
 
