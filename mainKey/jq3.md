@@ -1,4 +1,4 @@
-# jQuery 大版本1基础 api (1.12)
+# jQuery 大版本1基础 api (3系)
 # 选择器
 ```
 基本
@@ -19,7 +19,7 @@ prev ~ siblings
 :odd
 :eq(index)
 :gt(index)
-:lang
+:lang1.9+
 :last
 :lt(index)
 :header
@@ -70,17 +70,18 @@ prev ~ siblings
 :disabled
 :checked
 :selected
+混淆选择器
+$.escapeSelector(selector)
 ```
+
 # 核心
 ```
 jQuery 核心函数
 jQuery([sel,[context]])
 jQuery(html,[ownerDoc])
 jQuery(callback)
-jQuery.holdReady(hold)
 jQuery 对象访问
 each(callback)
-size()
 length
 selector
 context
@@ -189,16 +190,9 @@ ready(fn)
 事件处理
 on(eve,[sel],[data],fn)
 off(eve,[sel],[fn])
-bind(type,[data],fn)
 one(type,[data],fn)
 trigger(type,[data])
 triggerHandler(type, [data])
-unbind(t,[d|f])
-事件委派
-live(type,[data],fn)
-die(type,[fn])1.7-
-delegate(s,[t],[d],fn)
-undelegate([s,[t],fn])
 事件切换
 hover([over,]out)
 toggle([spe],[eas],[fn])
@@ -261,15 +255,14 @@ $.boxModel
 $.each(object,[callback])
 $.extend([d],tgt,obj1,[objN])
 $.grep(array,fn,[invert])
+$.sub()1.9-
 $.when(deferreds)
 $.makeArray(obj)
 $.map(arr|obj,callback)
 $.inArray(val,arr,[from])
 $.toArray()
 $.merge(first,second)
-$.unique(array)
-$.uniqueSort( array )
-$.parseJSON(json)
+$.uniqueSort(array)
 $.parseXML(data)
 函数操作
 $.noop
@@ -277,12 +270,12 @@ $.proxy(function,context)
 测试操作
 $.contains(c,c)
 $.type(obj)
-$.isArray(obj)
+$.isArray(obj)3.2-
 $.isFunction(obj)
 $.isEmptyObject(obj)
 $.isPlainObject(obj)
 $.isWindow(obj)
-$.isNumeric(value)
+$.isNumeric(value)1.7+
 字符串操作
 $.trim(str)
 URL
@@ -320,8 +313,9 @@ prevall([expr])
 prevUntil([e|e][,f])
 siblings([expr])
 串联
-add(e|e|h|o[,c])
-addBack()
+add(e|e|h|o[,c])1.9*
+andSelf()1.8-
+addBack()1.9+
 contents()
 end()
 ```
@@ -346,6 +340,7 @@ eve.timeStamp
 eve.type
 eve.which
 ```
+
 # 延迟对象
 ```
 def.done(d,[d])

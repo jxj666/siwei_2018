@@ -6,7 +6,9 @@
 
 ## 开发 API
 
-### [jQuery1.12](mainKey/jq112.md)
+### [jQuery3](mainKey/jq3.md)
+
+### [jQuery1](mainKey/jq1.md)
 
 ### [git](mainKey/git.md)
 
