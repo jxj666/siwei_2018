@@ -19,7 +19,7 @@ prev ~ siblings
 :odd
 :eq(index)
 :gt(index)
-:lang1.9+
+:lang
 :last
 :lt(index)
 :header
@@ -255,7 +255,7 @@ $.boxModel
 $.each(object,[callback])
 $.extend([d],tgt,obj1,[objN])
 $.grep(array,fn,[invert])
-$.sub()1.9-
+
 $.when(deferreds)
 $.makeArray(obj)
 $.map(arr|obj,callback)
@@ -270,12 +270,12 @@ $.proxy(function,context)
 测试操作
 $.contains(c,c)
 $.type(obj)
-$.isArray(obj)3.2-
+
 $.isFunction(obj)
 $.isEmptyObject(obj)
 $.isPlainObject(obj)
 $.isWindow(obj)
-$.isNumeric(value)1.7+
+$.isNumeric(value)
 字符串操作
 $.trim(str)
 URL
@@ -313,9 +313,9 @@ prevall([expr])
 prevUntil([e|e][,f])
 siblings([expr])
 串联
-add(e|e|h|o[,c])1.9*
-andSelf()1.8-
-addBack()1.9+
+add(e|e|h|o[,c])
+
+addBack()
 contents()
 end()
 ```
